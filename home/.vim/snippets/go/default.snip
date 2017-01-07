@@ -1,0 +1,63 @@
+snippet     import
+abbr        import (...)
+  import(
+    "${1}"
+  )
+
+snippet     cons
+abbr        const ( A = value )
+  const (
+    ${1:constant} = ${2:type}
+  )
+
+
+snippet     for
+abbr        for i := 0; i < int; i++ { ... }
+  for i := 0; i < ${1:upper_bound}; i++ {
+    ${2}
+  }
+
+snippet     forr
+abbr        for i := range var { ... }
+  for i := range ${1:array} {
+    ${2}
+  }
+
+snippet     funcc
+abbr        func ...(...) { ... }
+options     head
+  func ${1:name}() {
+  }
+
+snippet     funcd
+abbr        func () ... (...) { ... }
+options     head
+  func () ${1:name}() {
+  }
+
+snippet     if
+abbr        if ... { ... }
+options     head
+  if ${1:condition} {
+    ${2}
+  }
+
+snippet     switch
+abbr        switch { case ...: ... }
+options     head
+  switch {
+  case ${1:variable}:
+    ${2}
+  }
+
+snippet     type
+abbr        type StructName struct { ... }
+  type ${1:name} struct {
+    ${2}
+  }
+
+snippet     typei
+abbr        type interfaceName interface { ... }
+  type ${1:name} interface {
+    ${2}
+  }

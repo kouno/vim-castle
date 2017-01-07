@@ -1,0 +1,185 @@
+let g:html_indent_tags = ''
+
+" NERDTree
+  autocmd vimenter * if !argc() | NERDTree | endif
+
+" Airline
+  let g:airline_powerline_fonts = 1
+  let g:airline_theme='dark'
+
+" TagBar
+  nmap <F8> :TagbarToggle<CR>
+
+  " Go config
+  let g:tagbar_type_go = {
+      \ 'ctagstype' : 'go',
+      \ 'kinds'     : [
+          \ 'p:package',
+          \ 'i:imports:1',
+          \ 'c:constants',
+          \ 'v:variables',
+          \ 't:types',
+          \ 'n:interfaces',
+          \ 'w:fields',
+          \ 'e:embedded',
+          \ 'm:methods',
+          \ 'r:constructor',
+          \ 'f:functions'
+      \ ],
+      \ 'sro' : '.',
+      \ 'kind2scope' : {
+          \ 't' : 'ctype',
+          \ 'n' : 'ntype'
+      \ },
+      \ 'scope2kind' : {
+          \ 'ctype' : 't',
+          \ 'ntype' : 'n'
+      \ },
+      \ 'ctagsbin'  : 'gotags',
+      \ 'ctagsargs' : '-sort -silent'
+  \ }
+
+" go-vim
+  let g:go_highlight_functions = 1
+  let g:go_highlight_structs = 1
+
+  let g:go_fmt_command = "goimports"
+
+" Gundo
+  nmap <F5> :GundoToggle<CR>
+
+" CtrlP
+  set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+  " Map ctrl-t to search in tags
+  map <C-t> :CtrlPTag<cr>
+
+  " Infinite search
+  let g:ctrlp_max_files=0
+
+  " Stay in the directory I cd-ed into
+  let g:ctrlp_working_path_mode = 0
+
+  " Default filters
+  let dir_list = [
+    \ '\v[\/]\.(git|hg|svn)',
+    \ '\v[\/](node_modules|bower_components)',
+    \ '\v[\/]Godeps',
+    \ '\v[\/]public',
+    \ '\v[\/]coverage',
+    \ 'tmp$'
+  \ ]
+
+  let g:ctrlp_custom_ignore = {
+    \ 'dir':  join(dir_list, '|'),
+    \ 'file': '\v\.(exe|so|dll)$'
+    \ }
+
+" Vroom Config
+  let g:vroom_use_vimux = 1
+  let g:vroom_use_bundle_exec = 0
+  let g:vroom_cucumber_path = 'cucumber'
+
+" Indent-Guides
+  let g:indent_guides_auto_colors = 0
+  hi IndentGuidesOdd  ctermbg=236
+  hi IndentGuidesEven ctermbg=237
+
+" Neo completion
+  " Disable AutoComplPop.
+  let g:acp_enableAtStartup = 0
+  " Use deoplete.
+  let g:deoplete#enable_at_startup = 1
+  " Use smartcase.
+  let g:deoplete#enable_smart_case = 1
+  " Set minimum syntax keyword length.
+  let g:deoplete#sources#syntax#min_keyword_length = 2
+
+  let g:deoplete#enable_auto_select = 0
+
+  " Enable omni completion.
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+  " Recommended key-mappings.
+  " <CR>: close popup and save indent.
+  inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+  function! s:my_cr_function()
+    return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+    " For no inserting <CR> key.
+    "return pumvisible() ? "\<C-y>" : "\<CR>"
+  endfunction
+  " <TAB>: completion.
+  inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+  " <C-h>, <BS>: close popup and delete backword char.
+  inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+  inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+
+" Neo snippet
+  " Plugin key-mappings.
+  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+  " SuperTab like snippets behavior.
+  imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: pumvisible() ? "\<C-n>" : "\<TAB>"
+  smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)"
+  \: "\<TAB>"
+
+  " For snippet_complete marker.
+  if has('conceal')
+    set conceallevel=2 concealcursor=i
+  endif
+
+  " Tell Neosnippet about the other snippets
+  let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets/'
+
+" Closetag
+  au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+
+" vim-gitgutter
+
+  " Remove highlighting
+  highlight clear SignColumn
+
+" Emmet
+  let g:user_emmet_expandabbr_key = '<C-d>'
+  let g:use_emmet_complete_tag = 1
+
+" Syntastic
+  let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "ng-']
+  let g:syntastic_javascript_checkers = ['eslint']
+
+" Go
+  au FileType go nmap <leader>r <Plug>(go-run)
+  au FileType go nmap <leader>b <Plug>(go-build)
+  au FileType go nmap <leader>t :GoTest<cr>
+  au FileType go nmap <leader>c <Plug>(go-coverage)
+
+  au FileType go nmap <Leader>ds <Plug>(go-def-split)
+  au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+  au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+
+" Rust (Cargo)
+  au FileType rust nmap <leader>r :VimuxPromptCommand "cargo run"<cr><cr>
+  au FileType rust nmap <leader>t :VimuxPromptCommand "cargo test"<cr><cr>
+  au FileType rust nmap <leader>b :VimuxPromptCommand "cargo build"<cr><cr>
+
+" Vimux
+  nmap <leader>o :VimuxPromptCommand<CR>
+
+" Vim json
+  set conceallevel=0
+
+" JSX everywhere!
+  let g:jsx_ext_required = 0
+
+" Vim Flow
+  let g:flow#autoclose = 1
+  let g:flow#enable = 0

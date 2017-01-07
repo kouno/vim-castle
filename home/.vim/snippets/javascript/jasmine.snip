@@ -1,0 +1,29 @@
+snippet     it
+abbr        it('...', function() { ... })
+  it("${1}", function() {
+    ${2}
+  });
+
+snippet     xit
+abbr        xit('...', function () { ... })
+  xit("${1}", function() {
+    ${2}
+  });
+
+snippet     desc
+abbr        describe('...', function() { ... })
+  describe("${1}", function() {
+    ${2}
+  });
+
+snippet     before-
+abbr        beforeEach(function() { ... })
+  beforeEach(function() {
+    ${1}
+  });
+
+snippet     after-
+abbr        afterEach(function() { ... })
+  afterEach(function() {
+    ${1}
+  });

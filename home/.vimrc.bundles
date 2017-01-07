@@ -1,0 +1,65 @@
+call plug#begin('~/.vim/bundle')
+
+" Language support
+Plug 'fatih/vim-go'
+Plug 'rodjek/vim-puppet'
+Plug 'wting/rust.vim'
+Plug 'vim-ruby/vim-ruby'
+Plug 'groenewege/vim-less'
+Plug 'pangloss/vim-javascript'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'mxw/vim-jsx'
+Plug 'kchmck/vim-coffee-script'
+Plug 'AndrewRadev/vim-eco'
+Plug 'othree/html5.vim'
+Plug 'briancollins/vim-jst'
+Plug 'vim-erlang/vim-erlang-runtime'
+Plug 'elixir-lang/vim-elixir'
+Plug 'flowtype/vim-flow'
+
+" Interface
+Plug 'majutsushi/tagbar'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'kien/ctrlp.vim'
+Plug 'sjl/gundo.vim', { 'on': 'GundoToggle' }
+Plug 'scrooloose/nerdtree'
+Plug 'nathanaelkane/vim-indent-guides'
+
+" Text manipulation
+Plug 'Raimondi/delimitMate'
+Plug 'Shougo/deoplete.nvim', has('nvim') ? {} : { 'on': [] }
+Plug 'Shougo/neocomplete', has('vim') ? {} : { 'on': [] }
+Plug 'Shougo/neosnippet'
+  Plug 'Shougo/neosnippet-snippets'
+Plug 'godlygeek/tabular'
+Plug 'kana/vim-textobj-user'
+Plug 'mattn/emmet-vim'
+Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
+Plug 'scrooloose/nerdcommenter'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'vim-scripts/Auto-Pairs'
+Plug 'vim-scripts/closetag.vim'
+
+" Miscellanous
+Plug 'benmills/vimux'
+Plug 'phildawes/racer'
+Plug 'scrooloose/syntastic'
+Plug 'skalnik/vim-vroom'
+Plug 'Konfekt/FastFold'
+
+" tpope collection (yeah, he has a whole section for himself...)
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-cucumber'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+
+" These plugins are quite slow
+"Plug 'tpope/vim-rails'
+"Plug 'tpope/vim-rake'
+
+call plug#end()
