@@ -183,3 +183,12 @@ let g:html_indent_tags = ''
 " Vim Flow
   let g:flow#autoclose = 1
   let g:flow#enable = 0
+
+" neomake
+  autocmd! BufWritePost * Neomake
+
+" gutentags
+  let g:gutentags_cache_dir = '~/.tags_cache'
+
+" alchemist
+  let g:alchemist_tag_disable = 1

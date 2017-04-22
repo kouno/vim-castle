@@ -1,21 +1,8 @@
 call plug#begin('~/.vim/bundle')
 
 " Language support
+Plug 'sheerun/vim-polyglot'
 Plug 'fatih/vim-go'
-Plug 'rodjek/vim-puppet'
-Plug 'wting/rust.vim'
-Plug 'vim-ruby/vim-ruby'
-Plug 'groenewege/vim-less'
-Plug 'pangloss/vim-javascript'
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'mxw/vim-jsx'
-Plug 'kchmck/vim-coffee-script'
-Plug 'AndrewRadev/vim-eco'
-Plug 'othree/html5.vim'
-Plug 'briancollins/vim-jst'
-Plug 'vim-erlang/vim-erlang-runtime'
-Plug 'elixir-lang/vim-elixir'
-Plug 'flowtype/vim-flow'
 
 " Interface
 Plug 'majutsushi/tagbar'
@@ -47,10 +34,12 @@ Plug 'phildawes/racer'
 Plug 'scrooloose/syntastic'
 Plug 'skalnik/vim-vroom'
 Plug 'Konfekt/FastFold'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'neomake/neomake'
+Plug 'slashmili/alchemist.vim'
 
 " tpope collection (yeah, he has a whole section for himself...)
 Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-cucumber'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
