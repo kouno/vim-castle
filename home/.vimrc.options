@@ -192,3 +192,4 @@ let g:html_indent_tags = ''
 
 " alchemist
   let g:alchemist_tag_disable = 1
+  au FileType elixir nmap <Leader>gd :ExDef<CR>
