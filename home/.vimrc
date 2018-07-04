@@ -99,9 +99,6 @@ nnoremap Y y$
 " Remove highlighting
 nnoremap <CR> :noh<CR><CR>
 
-" Search multiple tags
-nnoremap \] :ts <c-r><c-w><CR>
-
 " Copy to system clipboard
 nnoremap <leader>y "+y
 

@@ -48,32 +48,27 @@ let g:html_indent_tags = ''
 " Gundo
   nmap <F5> :GundoToggle<CR>
 
-" CtrlP
-  set runtimepath^=~/.vim/bundle/ctrlp.vim
+" FZF
+  map <C-t> :Tags<cr>
+  map <C-p> :Files<cr>
+  nnoremap \] :Tags <c-r><c-w><CR>
 
-  " Map ctrl-t to search in tags
-  map <C-t> :CtrlPTag<cr>
+  " Enable per-command history.
+  " CTRL-N and CTRL-P will be automatically bound to next-history and
+  " previous-history instead of down and up. If you don't like the change,
+  " explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
+  let g:fzf_history_dir = '~/.local/share/fzf-history'
 
-  " Infinite search
-  let g:ctrlp_max_files=0
+  " Command for git grep
+  " - fzf#vim#grep(command, with_column, [options], [fullscreen])
+  command! -bang -nargs=* GGrep
+    \ call fzf#vim#grep(
+    \   'git grep --line-number '.shellescape(<q-args>), 0,
+    \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
 
-  " Stay in the directory I cd-ed into
-  let g:ctrlp_working_path_mode = 0
-
-  " Default filters
-  let dir_list = [
-    \ '\v[\/]\.(git|hg|svn)',
-    \ '\v[\/](node_modules|bower_components)',
-    \ '\v[\/]Godeps',
-    \ '\v[\/]public',
-    \ '\v[\/]coverage',
-    \ 'tmp$'
-  \ ]
-
-  let g:ctrlp_custom_ignore = {
-    \ 'dir':  join(dir_list, '|'),
-    \ 'file': '\v\.(exe|so|dll)$'
-    \ }
+  " Likewise, Files command with preview window
+  command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 " Vroom Config
   let g:vroom_use_vimux = 1
@@ -138,10 +133,10 @@ let g:html_indent_tags = ''
   endif
 
   " Tell Neosnippet about the other snippets
-  let g:neosnippet#snippets_directory='~/dotfiles/vim/snippets/'
+  let g:neosnippet#snippets_directory='~/.vim/snippets/'
 
 " Closetag
-  au Filetype html,xml,xsl source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
+  au Filetype html,xml,xsl source ~/.vim/bundle/closetag
 
 " vim-gitgutter
 
