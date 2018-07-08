@@ -1,7 +1,8 @@
 let g:html_indent_tags = ''
 
 " NERDTree
-  autocmd vimenter * if !argc() | NERDTree | endif
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Airline
   let g:airline_powerline_fonts = 1
@@ -138,10 +139,8 @@ let g:html_indent_tags = ''
 " Closetag
   au Filetype html,xml,xsl source ~/.vim/bundle/closetag
 
-" vim-gitgutter
-
-  " Remove highlighting
-  highlight clear SignColumn
+" GitGutter
+  set updatetime=100
 
 " Emmet
   let g:user_emmet_expandabbr_key = '<C-d>'
