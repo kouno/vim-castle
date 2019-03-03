@@ -99,6 +99,9 @@ nnoremap Y y$
 " Remove highlighting
 nnoremap <CR> :noh<CR><CR>
 
+" always use clipboard for all operations
+set clipboard+=unnamedplus
+
 " Copy to system clipboard
 nnoremap <leader>y "+y
 
