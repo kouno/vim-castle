@@ -165,6 +165,8 @@ let g:html_indent_tags = ''
   au FileType rust nmap <leader>t :VimuxPromptCommand "cargo test"<cr><cr>
   au FileType rust nmap <leader>b :VimuxPromptCommand "cargo build"<cr><cr>
 
+  let g:rustfmt_autosave = 1
+
 " Vimux
   nmap <leader>o :VimuxPromptCommand<CR>
 
