@@ -3,6 +3,7 @@ call plug#begin('~/.vim/bundle')
 " Language support
 Plug 'sheerun/vim-polyglot'
 Plug 'fatih/vim-go'
+Plug 'rust-lang/rust.vim'
 
 " Interface
 Plug 'majutsushi/tagbar'
