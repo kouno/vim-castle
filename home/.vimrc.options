@@ -138,6 +138,9 @@ let g:html_indent_tags = ''
 
 " GitGutter
   set updatetime=100
+  highlight GitGutterAdd    guifg=#009900 ctermfg=2
+  highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+  highlight GitGutterDelete guifg=#ff2222 ctermfg=1
 
 " Emmet
   let g:user_emmet_expandabbr_key = '<C-d>'
