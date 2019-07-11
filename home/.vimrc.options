@@ -179,6 +179,7 @@ let g:html_indent_tags = ''
 
 " neomake
   autocmd! BufWritePost * Neomake
+  let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
 
 " gutentags
   let g:gutentags_cache_dir = '~/.tags_cache'
@@ -186,3 +187,7 @@ let g:html_indent_tags = ''
 " alchemist
   let g:alchemist_tag_disable = 1
   au FileType elixir nmap <Leader>gd :ExDef<CR>
+
+" Javascript
+  let g:javascript_plugin_flow = 1
+  let g:ale_linters = {'javascript': ['eslint', 'flow']}

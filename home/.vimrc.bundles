@@ -39,6 +39,7 @@ Plug 'Konfekt/FastFold'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'neomake/neomake'
 Plug 'slashmili/alchemist.vim'
+Plug 'w0rp/ale'
 
 " tpope collection (yeah, he has a whole section for himself...)
 Plug 'tpope/vim-bundler'
