@@ -136,9 +136,6 @@ let g:html_indent_tags = ''
   " Tell Neosnippet about the other snippets
   let g:neosnippet#snippets_directory='~/.vim/snippets/'
 
-" Closetag
-  au Filetype html,xml,xsl source ~/.vim/bundle/closetag
-
 " GitGutter
   set updatetime=100
 

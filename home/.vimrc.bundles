@@ -28,9 +28,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'mattn/emmet-vim'
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby' }
 Plug 'scrooloose/nerdcommenter'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-scripts/Auto-Pairs'
-Plug 'vim-scripts/closetag.vim'
 
 " Miscellanous
 Plug 'benmills/vimux'
