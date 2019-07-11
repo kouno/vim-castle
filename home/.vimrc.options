@@ -188,8 +188,9 @@ let g:html_indent_tags = ''
   let g:gutentags_cache_dir = '~/.tags_cache'
 
 " alchemist
-  let g:alchemist_tag_disable = 1
   au FileType elixir nmap <Leader>gd :ExDef<CR>
+  autocmd BufWritePost *.exs,*.ex silent :!mix format %
+  let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
 
 " Javascript
   let g:javascript_plugin_flow = 1
