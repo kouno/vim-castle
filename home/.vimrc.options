@@ -194,4 +194,11 @@ let g:html_indent_tags = ''
 
 " Javascript
   let g:javascript_plugin_flow = 1
-  let g:ale_linters = {'javascript': ['eslint', 'flow']}
+  autocmd BufWritePost *.js,*.jsx ALEFix
+
+" Ale
+  let g:ale_linters = {
+    \ 'javascript': ['eslint', 'flow'],
+    \ 'elixir': ['credo', 'dialyxir', 'elixir-ls']
+  \ }
+  let g:ale_fixers = {'javascript': ['eslint']}
