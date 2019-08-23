@@ -141,8 +141,7 @@ map <leader>et :tabe %%
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Reload Ctags using F12
-map <F11> :!ripper-tags -R --exclude=@./.ctagsignore . 2> /dev/null && echo 'Ripper-tags reloaded'<CR>
-map <F12> :!ctags -R --exclude=@./.ctagsignore . 2> /dev/null && echo 'Ctags reloaded'<CR>
+map <F12> :!ctags -R . && echo 'Ctags reloaded'<CR>
 
 augroup vimrcEx
   au!
