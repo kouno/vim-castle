@@ -178,16 +178,9 @@ elseif isdirectory($SSHHOME)
   " In case we use sshrc, source out theme file
   source $SSHHOME/.sshrc.d/Tomorrow-Night-Eighties.vim
 else
-  colorscheme Tomorrow-Night-Eighties
+  set termguicolors
+  colorscheme base16-tomorrow-night-eighties
 endif
-
-highlight DiffAdd term=reverse cterm=bold ctermbg=green ctermfg=black
-highlight DiffChange term=reverse cterm=bold ctermbg=cyan ctermfg=black
-highlight DiffText term=reverse cterm=bold ctermbg=gray ctermfg=black
-highlight DiffDelete term=reverse cterm=bold ctermbg=red ctermfg=black
-
-highlight NonText guibg=#060606
-highlight Folded  guibg=#0A0A0A guifg=#9090D0
 
 " Default spacing configuration
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
