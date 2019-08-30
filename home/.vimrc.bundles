@@ -34,13 +34,8 @@ Plug 'vim-scripts/Auto-Pairs'
 " Miscellanous
 Plug 'benmills/vimux'
 Plug 'phildawes/racer'
-Plug 'scrooloose/syntastic'
 Plug 'skalnik/vim-vroom'
-Plug 'Konfekt/FastFold'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'neomake/neomake'
-Plug 'slashmili/alchemist.vim'
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 
 " tpope collection (yeah, he has a whole section for himself...)
 Plug 'tpope/vim-bundler'
@@ -51,9 +46,5 @@ Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-rhubarb'
-
-" These plugins are quite slow
-"Plug 'tpope/vim-rails'
-"Plug 'tpope/vim-rake'
 
 call plug#end()

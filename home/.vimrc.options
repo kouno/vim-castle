@@ -6,39 +6,10 @@ let g:html_indent_tags = ''
 
 " Airline
   let g:airline_powerline_fonts = 1
-  let g:airline_theme='dark'
+  let g:airline_theme='base16_tomorrow'
 
 " TagBar
   nmap <F8> :TagbarToggle<CR>
-
-  " Go config
-  let g:tagbar_type_go = {
-      \ 'ctagstype' : 'go',
-      \ 'kinds'     : [
-          \ 'p:package',
-          \ 'i:imports:1',
-          \ 'c:constants',
-          \ 'v:variables',
-          \ 't:types',
-          \ 'n:interfaces',
-          \ 'w:fields',
-          \ 'e:embedded',
-          \ 'm:methods',
-          \ 'r:constructor',
-          \ 'f:functions'
-      \ ],
-      \ 'sro' : '.',
-      \ 'kind2scope' : {
-          \ 't' : 'ctype',
-          \ 'n' : 'ntype'
-      \ },
-      \ 'scope2kind' : {
-          \ 'ctype' : 't',
-          \ 'ntype' : 'n'
-      \ },
-      \ 'ctagsbin'  : 'gotags',
-      \ 'ctagsargs' : '-sort -silent'
-  \ }
 
 " go-vim
   let g:go_highlight_functions = 1
@@ -146,10 +117,6 @@ let g:html_indent_tags = ''
   let g:user_emmet_expandabbr_key = '<C-d>'
   let g:use_emmet_complete_tag = 1
 
-" Syntastic
-  let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "ng-']
-  let g:syntastic_javascript_checkers = ['eslint']
-
 " Go
   au FileType go nmap <leader>r <Plug>(go-run)
   au FileType go nmap <leader>b <Plug>(go-build)
@@ -176,29 +143,22 @@ let g:html_indent_tags = ''
 " JSX everywhere!
   let g:jsx_ext_required = 0
 
-" Vim Flow
-  let g:flow#autoclose = 1
-  let g:flow#enable = 0
-
-" neomake
-  autocmd! BufWritePost * Neomake
-  let g:neomake_javascript_eslint_exe = $PWD .'/node_modules/.bin/eslint'
-
-" gutentags
-  let g:gutentags_cache_dir = '~/.tags_cache'
-
-" alchemist
-  au FileType elixir nmap <Leader>gd :ExDef<CR>
-  autocmd BufWritePost *.exs,*.ex silent :!mix format %
-  let g:alchemist#elixir_erlang_src = "/usr/local/share/src"
-
 " Javascript
   let g:javascript_plugin_flow = 1
-  autocmd BufWritePost *.js,*.jsx ALEFix
 
 " Ale
   let g:ale_linters = {
     \ 'javascript': ['eslint', 'flow'],
-    \ 'elixir': ['credo', 'dialyxir', 'elixir-ls']
+    \ 'elixir': ['credo', 'dialyxir', 'elixir-ls', 'mix']
   \ }
-  let g:ale_fixers = {'javascript': ['eslint']}
+  let g:ale_fixers = {
+    \ 'javascript': ['eslint'],
+    \ 'elixir': ['mix_format', 'remove_trailing_lines', 'trim_whitespace']
+  \ }
+
+  let g:ale_fix_on_save = 1
+  let g:ale_lint_on_save = 1
+  let g:ale_completion_enabled = 1
+  let g:ale_close_preview_on_insert = 1
+
+  au FileType elixir nmap <Leader>gd :ALEGoToDefinition<CR>
