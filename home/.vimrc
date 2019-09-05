@@ -185,6 +185,10 @@ endif
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype coffee setlocal ts=2 sts=2 sw=2
 
+" Always do syntax highlighting from the beginning of the file
+" /!\ This is very slow on big files
+autocmd Filetype javascript syntax sync fromstart
+
 " nvim
 if has('nvim')
   if ! has('gui_running')
