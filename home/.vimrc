@@ -10,7 +10,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-if filereadable($HOME . "/.vimrc.bundles")
+if filereadable($HOME . '/.vimrc.bundles')
   source ~/.vimrc.bundles
 endif
 
