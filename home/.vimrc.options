@@ -149,10 +149,11 @@ let g:html_indent_tags = ''
 " Ale
   let g:ale_linters = {
     \ 'javascript': ['eslint', 'flow'],
-    \ 'elixir': ['credo', 'dialyxir', 'elixir-ls', 'mix']
+    \ 'elixir': ['credo', 'dialyxir', 'elixir-ls']
   \ }
+
   let g:ale_fixers = {
-    \ 'javascript': ['eslint'],
+    \ 'javascript': ['eslint', 'prettier', 'remove_trailing_lines', 'trim_whitespace'],
     \ 'elixir': ['mix_format', 'remove_trailing_lines', 'trim_whitespace']
   \ }
 
