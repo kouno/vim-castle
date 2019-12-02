@@ -86,9 +86,6 @@ nnoremap <F10> :b <C-Z>
 " Remap map leader to space
 let mapleader=' '
 
-" Trailing space removal
-autocmd FileType c,cpp,java,php,ruby,go autocmd BufWritePre <buffer> :%s/\s\+$//e
-
 " Tabulation (feature) mapping
 map <c-l> :tabn<CR>
 map <c-h> :tabp<CR>
