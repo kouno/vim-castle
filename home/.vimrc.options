@@ -147,22 +147,6 @@ let g:html_indent_tags = ''
   let g:javascript_plugin_flow = 1
 
 " Ale
-  let g:ale_linters = {
-    \ 'javascript': ['eslint', 'flow'],
-    \ 'elixir': ['credo', 'dialyxir', 'elixir-ls'],
-    \ 'terraform': ['tflint'],
-    \ 'rust': ['rls']
-  \ }
-
-  let g:ale_fixers = {
-    \ 'javascript': ['eslint', 'prettier', 'remove_trailing_lines', 'trim_whitespace'],
-    \ 'css': ['prettier'],
-    \ 'elixir': ['mix_format', 'remove_trailing_lines', 'trim_whitespace'],
-    \ 'sql': ['pgformatter'],
-    \ 'terraform': ['terraform'],
-    \ 'rust': ['rustfmt']
-  \ }
-
   let g:ale_fix_on_save = 1
   let g:ale_lint_on_save = 1
   let g:ale_completion_enabled = 1
