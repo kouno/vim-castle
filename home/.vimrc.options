@@ -57,8 +57,6 @@ let g:html_indent_tags = ''
   let g:acp_enableAtStartup = 0
   " Use deoplete.
   let g:deoplete#enable_at_startup = 1
-  " Use smartcase.
-  let g:deoplete#enable_smart_case = 1
   " Set minimum syntax keyword length.
   let g:deoplete#sources#syntax#min_keyword_length = 2
 
